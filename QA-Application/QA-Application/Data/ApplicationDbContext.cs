@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using QA_Application.Models;
 namespace QA_Application.Data
 {
     public class ApplicationDbContext : IdentityDbContext
@@ -11,6 +11,8 @@ namespace QA_Application.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
+
         }
+        public DbSet<Category> Category { get; set; }
     }
 }

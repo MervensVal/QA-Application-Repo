@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap4")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-QA_Application-7022CEC0-6583-443A-BC51-1A18156934E1")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("QA-Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]

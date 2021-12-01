@@ -1,0 +1,24 @@
+﻿@using QA_Application.Models
+@model Category
+@{
+    ViewData["Title"] = "AddCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Add Category</h3>
+
+<form asp-action="AddCategory">
+    <table>
+        <tr>
+            <td>
+                <label asp-for="CategoryName"></label>
+            </td>
+            <td>
+                <input type="text" asp-for="CategoryName" required>
+                <span asp-validation-for="CategoryName"></span>
+            </td>
+        </tr>
+    </table>
+    <input class="btn btn-secondary" type="submit" value="submit">
+    <a asp-area="" asp-controller="Category" asp-action="Index"></a>
+</form>
