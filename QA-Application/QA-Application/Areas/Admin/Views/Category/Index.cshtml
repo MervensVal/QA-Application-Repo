@@ -1,0 +1,35 @@
+﻿@using QA_Application.Models
+@model IEnumerable<Category>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Index</h3>
+
+<a class="btn btn-primary" asp-action="AddCategory">Add Category</a>
+<a class="btn btn-primary" asp-action="ArchiveList">View Archives</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryName)
+                </td>
+                <td>
+                    <a asp-action="Archive" asp-route-id="@item.CategoryId">Archive</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

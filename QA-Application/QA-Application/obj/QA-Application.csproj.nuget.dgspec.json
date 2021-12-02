@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\valme\\source\\repos\\QA-Application-Repo\\QA-Application\\QA-Application\\QA-Application.csproj": {}
+    "C:\\Users\\valme\\Source\\Repos\\MervensVal\\QA-Application-Repo\\QA-Application\\QA-Application\\QA-Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\valme\\source\\repos\\QA-Application-Repo\\QA-Application\\QA-Application\\QA-Application.csproj": {
+    "C:\\Users\\valme\\Source\\Repos\\MervensVal\\QA-Application-Repo\\QA-Application\\QA-Application\\QA-Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\valme\\source\\repos\\QA-Application-Repo\\QA-Application\\QA-Application\\QA-Application.csproj",
+        "projectUniqueName": "C:\\Users\\valme\\Source\\Repos\\MervensVal\\QA-Application-Repo\\QA-Application\\QA-Application\\QA-Application.csproj",
         "projectName": "QA-Application",
-        "projectPath": "C:\\Users\\valme\\source\\repos\\QA-Application-Repo\\QA-Application\\QA-Application\\QA-Application.csproj",
+        "projectPath": "C:\\Users\\valme\\Source\\Repos\\MervensVal\\QA-Application-Repo\\QA-Application\\QA-Application\\QA-Application.csproj",
         "packagesPath": "C:\\Users\\valme\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\valme\\source\\repos\\QA-Application-Repo\\QA-Application\\QA-Application\\obj\\",
+        "outputPath": "C:\\Users\\valme\\Source\\Repos\\MervensVal\\QA-Application-Repo\\QA-Application\\QA-Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\valme\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -46,19 +46,21 @@
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.8, )"
+              "version": "[5.0.12, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[5.0.8, )"
+              "version": "[5.0.12, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.8, )"
+              "version": "[5.0.12, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.8, )"
+              "version": "[5.0.12, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
