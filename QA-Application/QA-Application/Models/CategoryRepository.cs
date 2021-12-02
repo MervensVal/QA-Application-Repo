@@ -28,12 +28,13 @@ namespace QA_Application.Models
 
         public void archive(Category c)
         {
-
+            _db.Category.Update(c);
+            _db.SaveChanges();
         }
 
         public Category getCategoryById(int id)
         {
-            throw new NotImplementedException();
+            return _db.Category.FirstOrDefault(c => c.CategoryId == id);
         }
 
     }

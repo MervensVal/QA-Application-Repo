@@ -14,6 +14,8 @@ namespace QA_Application.Models
         [Required]
         [Display(Name = "Category")]
         public string CategoryName { get; set; }
+
+        public string Archive { get; set; }
     }
 }
 

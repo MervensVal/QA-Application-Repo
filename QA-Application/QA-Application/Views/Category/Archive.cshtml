@@ -1,0 +1,44 @@
+﻿@using QA_Application.Models
+@model Category
+@{
+    ViewData["Title"] = "Archive";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Archive</h3>
+
+<form asp-action="Archive">
+    <table>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(c => c.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(c => c.CategoryName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Archive?
+            </td>
+            <td>
+                Yes: @Html.RadioButtonFor(c => c.Archive, "Yes")
+                No:  @Html.RadioButtonFor(c => c.Archive, "No")
+
+                @*Yes:   @Html.RadioButton("Archive", "Yes")
+        No: @Html.RadioButton("Archive", "No")*@
+
+                @*Yes: <input type="radio" id="archiveYes" name="archiveYes" value="Yes" asp-for="Archive">
+        No: <input type="radio" id="archiveNo" name="archiveNo" value="No" asp-for="Archive">*@
+                @*<select name="Archive" asp-for="Archive">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>*@
+            </td>
+        </tr>
+    </table>
+    <input type="hidden" asp-for="CategoryName">
+    <input type="hidden" asp-for="CategoryId">
+    <input class="btn btn-warning" type="submit" value="submit">
+    <a class="btn btn-primary" asp-area="" asp-controller="Category" asp-action="Index">Back to List</a>
+</form>
