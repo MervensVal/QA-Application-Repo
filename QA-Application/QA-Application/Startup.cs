@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using QA_Application.Data;
+using QA_Application.Data.Initializer;
 using QA_Application.Models;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,7 @@ namespace QA_Application
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            //services.AddScoped<IDbInitializer, DbInitializer>();
             services.AddControllersWithViews();
             services.ConfigureApplicationCookie(options =>
             {

@@ -14,5 +14,6 @@ namespace QA_Application.Data
 
         }
         public DbSet<Category> Category { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
     }
 }
