@@ -368,3 +368,7 @@ C:\Users\valme\Source\Repos\MervensVal\QA-Application-Repo\QA-Application\QA-App
 C:\Users\valme\Source\Repos\MervensVal\QA-Application-Repo\QA-Application\QA-Application\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
 C:\Users\valme\Source\Repos\MervensVal\QA-Application-Repo\QA-Application\QA-Application\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
 C:\Users\valme\Source\Repos\MervensVal\QA-Application-Repo\QA-Application\QA-Application\obj\Debug\net5.0\Razor\Areas\Users\Views\Home\Privacy.cshtml.g.cs
+C:\Users\valme\Source\Repos\MervensVal\QA-Application-Repo\QA-Application\QA-Application\obj\Debug\net5.0\Razor\Areas\Employee\Views\Question\Index.cshtml.g.cs
+C:\Users\valme\Source\Repos\MervensVal\QA-Application-Repo\QA-Application\QA-Application\obj\Debug\net5.0\Razor\Areas\Employee\Views\Question\AddQuestion.cshtml.g.cs
+C:\Users\valme\Source\Repos\MervensVal\QA-Application-Repo\QA-Application\QA-Application\obj\Debug\net5.0\Razor\Areas\Employee\Views\_ViewImports.cshtml.g.cs
+C:\Users\valme\Source\Repos\MervensVal\QA-Application-Repo\QA-Application\QA-Application\obj\Debug\net5.0\Razor\Areas\Employee\Views\_ViewStart.cshtml.g.cs

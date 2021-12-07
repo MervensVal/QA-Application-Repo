@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace QA_Application.Data.Initializer
+namespace QA_Application.ViewModels
 {
-    public interface IDbInitializer
+    public class ViewPostVM
     {
-        void Initializer();
     }
 }

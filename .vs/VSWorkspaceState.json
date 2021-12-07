@@ -1,6 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\QA-Application",
+    "\\QA-Application\\QA-Application",
+    "\\QA-Application\\QA-Application\\Areas",
+    "\\QA-Application\\QA-Application\\Areas\\Identity",
+    "\\QA-Application\\QA-Application\\Areas\\Identity\\Pages",
+    "\\QA-Application\\QA-Application\\Areas\\Identity\\Pages\\Account"
   ],
+  "SelectedNode": "\\QA-Application\\QA-Application\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
   "PreviewInSolutionExplorer": false
 }
