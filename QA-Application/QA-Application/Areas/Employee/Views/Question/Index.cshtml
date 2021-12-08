@@ -8,31 +8,33 @@
 <h3>Questions</h3>
 
 <p>
-    <a class="btn btn-outline-info mb-2 mt-2" asp-action="AddQuestion">Add Question</a>
+    <a class="btn btn-outline-info mb-2 mt-2" asp-action="AddQuestion" >Add Question</a>
 </p>
 
 @foreach (var item in Model)
 {
-<div class="card bg-light mb-3" style="max-width: 48rem;">
-    <div>
+<div class="card bg-light mb-5" style="max-width: 48rem;" >
+    <div style="background-color: mediumaquamarine;" class="pt-1 pb-1">
         UserName: @Html.DisplayFor(modelItem => item.UserName)
     </div>
-    <div>
+    <div class="m-2">
         Category: @Html.DisplayFor(modelItem => item.CategoryId)
+        <hr />
     </div>
-    <div>
+    <div class="m-2">
         Urgency Level: @Html.DisplayFor(modelItem => item.UrgencyLevel)
+        <hr />
     </div>
-    <div class=" card-header text-white" style="background-color: mediumaquamarine;">
+    <div class="m-2">
         @Html.DisplayFor(modelItem => item.Title)
     </div>
-    <div class="mb-2 card-body border-primary">
-
+    <div class="m-2">
         @Html.DisplayFor(modelItem => item.QuestionBody)
     </div>
     @if (item.Answer is not null)
     {
-        <div class="mb-2 card-body border-info">
+        <hr />
+        <div class="m-2">
             @Html.DisplayFor(modelItem => item.Answer)
         </div>
     }
@@ -40,9 +42,13 @@
         <a class="btn btn-outline-info" asp-action="Edit" asp-route-id="@item.QA_Id">Edit</a> |
         @if (item.Answer is null)
         {
-            <a class="btn btn-outline-info" asp-action="Answer" asp-route-id="@item.QA_Id">Answer</a>
+            <a class="btn btn-outline-info" asp-action="Answer" asp-route-id="@item.QA_Id">Answer</a> 
         }
-        <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.QA_Id">Delete</a> |
+        | <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.QA_Id">Delete</a>
     </div>
 </div>
 }
+
+
+
+

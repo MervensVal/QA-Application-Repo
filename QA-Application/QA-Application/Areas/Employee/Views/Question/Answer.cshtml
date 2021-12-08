@@ -1,0 +1,40 @@
+﻿@model QA_Application.Models.Question
+
+@{
+    ViewData["Title"] = "Answer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Answer</h3>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Answer">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="QA_Id" />
+            <input type="hidden" asp-for="UserName" />
+            <input type="hidden" asp-for="Title" />
+            <input type="hidden" asp-for="CategoryId" />
+            <input type="hidden" asp-for="UrgencyLevel" />
+
+            <div class="form-group">
+                <label asp-for="QuestionBody" class="control-label"></label>
+                <input asp-for=QuestionBody class="form-control" readonly />
+                <span asp-validation-for="QuestionBody" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Answer" class="control-label"></label>
+                <input asp-for="Answer" class="form-control" />
+                <span asp-validation-for="Answer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

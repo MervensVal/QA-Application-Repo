@@ -46,5 +46,50 @@ namespace QA_Application.Areas.Employee
             }
             return View(q);
         }
+
+        public IActionResult Answer(int id) 
+        {
+            return View(_questionRepo.FindQuestionById(id));
+        }
+
+        [HttpPost]
+        public IActionResult Answer(Question q)
+        {
+            if (ModelState.IsValid) 
+            {
+                _questionRepo.EditQuestion(q);
+                return (RedirectToAction("Index"));
+            }
+            return View(q);
+        }
+
+        public IActionResult Edit(int id)
+        {
+            return View(_questionRepo.FindQuestionById(id));
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Question q)
+        {
+            if (ModelState.IsValid)
+            {
+                _questionRepo.EditQuestion(q);
+                return (RedirectToAction("Index"));
+            }
+            return View(q);
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var quetionToDelete = _questionRepo.FindQuestionById(id);
+            return View(quetionToDelete);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Question q)
+        {
+            _questionRepo.Remove(q);
+            return (RedirectToAction("Index"));
+        }
     }
 }

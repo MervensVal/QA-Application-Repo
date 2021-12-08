@@ -21,6 +21,23 @@ namespace QA_Application.Models
             _db.SaveChanges();
         }
 
+        public void EditQuestion(Question q)
+        {
+            _db.Question.Update(q);
+            _db.SaveChanges();
+        }
+
+        public Question FindQuestionById(int id)
+        {
+            return (_db.Question.FirstOrDefault(q => q.QA_Id == id));
+        }
+
+        public void Remove(Question q)
+        {
+            _db.Question.Remove(q);
+            _db.SaveChanges();
+        }
+
         public IEnumerable<Question> ViewAllQuestions()
         {
             return _db.Question.ToList();
