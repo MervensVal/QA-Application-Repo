@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace QA_Application.ViewModels
 {
-    public class ViewPostVM
+    public class ViewQuestionVM
     {
     }
 }

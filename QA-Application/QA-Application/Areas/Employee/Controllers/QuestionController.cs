@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using QA_Application.Models;
+using QA_Application.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +14,12 @@ namespace QA_Application.Areas.Employee
     public class QuestionController : Controller
     {
         private readonly IQuestionRepository _questionRepo;
+        private readonly ICategoryRepository _categoryRepository;
 
-        public QuestionController(IQuestionRepository questionRepo)
+        public QuestionController(IQuestionRepository questionRepo, ICategoryRepository categoryRepository)
         {
             _questionRepo = questionRepo;
+            _categoryRepository = categoryRepository;
         }
 
         public IActionResult Index()
@@ -27,7 +30,11 @@ namespace QA_Application.Areas.Employee
 
         public IActionResult AddQuestion()
         {
-            return View();
+            AddQuestionVM addQuestionVM = new AddQuestionVM
+            {
+                Categories = _categoryRepository.viewAllCategories().Where(c => c.Archive == "No"),
+            };
+            return View(addQuestionVM);
         }
 
         [HttpPost]
@@ -44,7 +51,11 @@ namespace QA_Application.Areas.Employee
                 _questionRepo.AddQuestion(q);
                 return (RedirectToAction("Index"));
             }
-            return View(q);
+            AddQuestionVM addQuestionVM = new AddQuestionVM
+            {
+                Categories = _categoryRepository.viewAllCategories().Where(c => c.Archive == "No"),
+            };
+            return View(addQuestionVM);
         }
 
         public IActionResult Answer(int id) 

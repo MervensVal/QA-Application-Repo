@@ -1,4 +1,5 @@
-﻿@model QA_Application.Models.Question
+﻿@using QA_Application.ViewModels 
+@model AddQuestionVM
 
 @{
     @using Microsoft.AspNetCore.Identity
@@ -14,38 +15,34 @@
     <div class="col-md-4">
         <form asp-action="AddQuestion">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            @*<div class="form-group">
-                <label asp-for="UserId" class="control-label"></label>
-                <input asp-for="UserId" class="form-control" />
-                <span asp-validation-for="UserId" class="text-danger"></span>
-            </div>*@
+        <div class="form-group">
+            <label class="control-label">Category</label>
+            <select name="CategoryId" asp-items="@(new SelectList(Model.Categories,"CategoryId","CategoryName"))"></select>
+            <span asp-validation-for="Question.CategoryId" class="text-danger"></span>
+        </div>
             <div class="form-group">
-                <label asp-for="CategoryId" class="control-label"></label>
-                <input asp-for="CategoryId" class="form-control" />
-                <span asp-validation-for="CategoryId" class="text-danger"></span>
+                <label asp-for="Question.UrgencyLevel" class="control-label"></label>
+                <select name="UrgencyLevel" class="form-control">
+                    <option value="1">1 Very Low</option>
+                    <option value="2">2 Low</option>
+                    <option value="3">3 Average</option>
+                    <option value="4">4 High</option>
+                    <option value="5">5 Vey High</option>
+                </select>                
+                <span asp-validation-for="Question.UrgencyLevel" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="UrgencyLevel" class="control-label"></label>
-                <input asp-for="UrgencyLevel" class="form-control" />
-                <span asp-validation-for="UrgencyLevel" class="text-danger"></span>
+                <label asp-for="Question.Title" class="control-label"></label>
+                <input name="Title" class="form-control"/>
+                <span asp-validation-for="Question.Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
+                <label asp-for="Question.QuestionBody" class="control-label"></label>
+                <textarea name="QuestionBody" class="form-control" rows="10" cols="20"></textarea>
+                <span asp-validation-for="Question.QuestionBody" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="QuestionBody" class="control-label"></label>
-                <textarea asp-for="QuestionBody" class="form-control" rows="10"></textarea>
-                <span asp-validation-for="QuestionBody" class="text-danger"></span>
-            </div>
-            @*<div class="form-group">
-                <label asp-for="Answer" class="control-label"></label>
-                <textarea asp-for="Answer" class="form-control" rows="4"> </textarea>
-                <span asp-validation-for="Answer" class="text-danger"></span>
-            </div>*@
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="submit" class="btn btn-primary" />
             </div>
         </form>
     </div>

@@ -10,8 +10,9 @@
     "\\QA-Application\\QA-Application\\Areas\\Identity",
     "\\QA-Application\\QA-Application\\Areas\\Identity\\Pages",
     "\\QA-Application\\QA-Application\\Areas\\Identity\\Pages\\Account",
-    "\\QA-Application\\QA-Application\\Areas\\Identity\\Pages\\Account\\Manage"
+    "\\QA-Application\\QA-Application\\Areas\\Identity\\Pages\\Account\\Manage",
+    "\\QA-Application\\QA-Application\\Models"
   ],
-  "SelectedNode": "\\QA-Application\\QA-Application\\Areas\\Employee\\Views\\Question\\Index.cshtml",
+  "SelectedNode": "\\QA-Application\\QA-Application\\Models\\QuestionRepository.cs",
   "PreviewInSolutionExplorer": false
 }
