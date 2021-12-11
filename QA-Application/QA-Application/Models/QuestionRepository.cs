@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using QA_Application.Data;
-
+using QA_Application.ViewModels;
 
 namespace QA_Application.Models
 {
@@ -24,6 +24,7 @@ namespace QA_Application.Models
         public void EditQuestion(Question q)
         {
             _db.Question.Update(q);
+            //_db.Entry(q).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             _db.SaveChanges();
         }
 
@@ -38,9 +39,24 @@ namespace QA_Application.Models
             _db.SaveChanges();
         }
 
-        public IEnumerable<Question> ViewAllQuestions()
+        public IEnumerable<ViewQuestionVM> ViewAllQuestions()
         {
-            return _db.Question.ToList();
+                var result = _db.Category.Join(
+                    _db.Question,
+                    cat => cat.CategoryId,
+                    ques => ques.CategoryId,
+                    (cat, ques) => new ViewQuestionVM
+                        {
+                            QA_Id = ques.QA_Id,
+                            UserName = ques.UserName,
+                            CategoryName = cat.CategoryName,
+                            UrgencyLevel = ques.UrgencyLevel,
+                            Title = ques.Title,
+                            QuestionBody = ques.QuestionBody,
+                            Answer = ques.Answer
+                        }
+                    );;
+            return result.ToList();
         }
     }
 }

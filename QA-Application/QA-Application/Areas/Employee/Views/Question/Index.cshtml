@@ -1,4 +1,4 @@
-﻿@model IEnumerable<QA_Application.Models.Question>
+﻿@model IEnumerable<QA_Application.ViewModels.ViewQuestionVM>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,12 +13,12 @@
 
 @foreach (var item in Model)
 {
-<div class="card bg-light mb-5" style="max-width: 48rem;" >
-    <div style="background-color: mediumaquamarine;" class="pt-1 pb-1">
+<div class="card bg-light mb-2 border-secondary">
+    <div style="background-color: mediumaquamarine;" >
         UserName: @Html.DisplayFor(modelItem => item.UserName)
     </div>
     <div class="m-2">
-        Category: @Html.DisplayFor(modelItem => item.CategoryId)
+        Category: @item.CategoryName
         <hr />
     </div>
     <div class="m-2">
@@ -26,16 +26,17 @@
         <hr />
     </div>
     <div class="m-2">
-        @Html.DisplayFor(modelItem => item.Title)
+        Title: @item.Title
+        <hr />
     </div>
     <div class="m-2">
-        @Html.DisplayFor(modelItem => item.QuestionBody)
+       Description: @item.QuestionBody
     </div>
     @if (item.Answer is not null)
     {
         <hr />
         <div class="m-2">
-            @Html.DisplayFor(modelItem => item.Answer)
+          Answer: @item.Answer
         </div>
     }
     <div class="card-footer">

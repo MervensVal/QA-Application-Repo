@@ -1,4 +1,5 @@
 ﻿using QA_Application.Data;
+using QA_Application.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace QA_Application.Models
 
         public IEnumerable<Category> viewAllCategories()
         {
-            return _db.Category.ToList();
+                return _db.Category.ToList();
         }
 
         public void addCategory(Category c)

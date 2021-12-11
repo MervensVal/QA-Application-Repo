@@ -76,7 +76,12 @@ namespace QA_Application.Areas.Employee
 
         public IActionResult Edit(int id)
         {
-            return View(_questionRepo.FindQuestionById(id));
+            AddQuestionVM editQuestionVM = new AddQuestionVM
+            {
+                Categories = _categoryRepository.viewAllCategories().Where(c => c.Archive == "No"),
+                Question = _questionRepo.FindQuestionById(id)
+            };
+            return View(editQuestionVM);
         }
 
         [HttpPost]
@@ -87,7 +92,12 @@ namespace QA_Application.Areas.Employee
                 _questionRepo.EditQuestion(q);
                 return (RedirectToAction("Index"));
             }
-            return View(q);
+            AddQuestionVM editQuestionVM = new AddQuestionVM
+            {
+                Categories = _categoryRepository.viewAllCategories().Where(c => c.Archive == "No"),
+                Question = _questionRepo.FindQuestionById(q.QA_Id)
+            };
+            return View(editQuestionVM);
         }
 
         public IActionResult Delete(int id)
