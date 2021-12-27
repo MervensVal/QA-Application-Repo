@@ -6,10 +6,8 @@
     "\\QA-Application\\QA-Application\\Areas",
     "\\QA-Application\\QA-Application\\Areas\\Employee",
     "\\QA-Application\\QA-Application\\Areas\\Employee\\Controllers",
-    "\\QA-Application\\QA-Application\\Areas\\Identity",
-    "\\QA-Application\\QA-Application\\Areas\\Identity\\Pages",
-    "\\QA-Application\\QA-Application\\Areas\\Identity\\Pages\\Account",
-    "\\QA-Application\\QA-Application\\Areas\\Identity\\Pages\\Account\\Manage",
+    "\\QA-Application\\QA-Application\\Areas\\Employee\\Views",
+    "\\QA-Application\\QA-Application\\Areas\\Employee\\Views\\Question",
     "\\QA-Application\\QA-Application\\Models"
   ],
   "SelectedNode": "\\QA-Application\\QA-Application\\Areas\\Employee\\Controllers\\QuestionController.cs",

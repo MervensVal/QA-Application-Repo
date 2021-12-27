@@ -375,3 +375,5 @@ C:\Users\valme\Source\Repos\MervensVal\QA-Application-Repo\QA-Application\QA-App
 C:\Users\valme\Source\Repos\MervensVal\QA-Application-Repo\QA-Application\QA-Application\obj\Debug\net5.0\Razor\Areas\Employee\Views\Question\Answer.cshtml.g.cs
 C:\Users\valme\Source\Repos\MervensVal\QA-Application-Repo\QA-Application\QA-Application\obj\Debug\net5.0\Razor\Areas\Employee\Views\Question\Edit.cshtml.g.cs
 C:\Users\valme\Source\Repos\MervensVal\QA-Application-Repo\QA-Application\QA-Application\obj\Debug\net5.0\Razor\Areas\Employee\Views\Question\Delete.cshtml.g.cs
+C:\Users\valme\Source\Repos\MervensVal\QA-Application-Repo\QA-Application\QA-Application\obj\Debug\net5.0\Razor\Areas\Employee\Views\Question\AddAnswer.cshtml.g.cs
+C:\Users\valme\Source\Repos\MervensVal\QA-Application-Repo\QA-Application\QA-Application\obj\Debug\net5.0\Razor\Areas\Employee\Views\Question\ViewAnswers.cshtml.g.cs

@@ -1,0 +1,47 @@
+﻿@using QA_Application.ViewModels
+@model IEnumerable<ViewAnswerVM>
+
+@{
+    ViewData["Title"] = "ViewAnswers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ViewAnswers</h1>
+
+<p>
+    <a asp-action="ViewAnswers">View Answers</a>
+</p>
+
+<label class="control-label">Question</label>
+<div class="card bg-light mb-2 border-secondary" width="50"> 
+    @ViewData["Question"]
+</div>
+@if( Model is not null) {
+    @foreach (var item in Model)
+    {
+    <div class="card bg-light mb-2 border-secondary">
+        <div style="background-color: mediumaquamarine;">
+            Userneame: @item.UserName
+        </div>
+        <div class="m-2">
+            Title:  @item.Title
+            <hr />
+        </div>
+        <div class="m-2">
+            Answered:  @item.Date
+            <hr />
+        </div>
+        <div class="m-2">
+            Title: @item.AnswerBody
+            <hr />
+        </div>
+        <div class="m-2">
+            Description: @item.QuestionBody
+        </div>
+    </div>
+    }
+}
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

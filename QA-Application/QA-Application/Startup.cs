@@ -45,6 +45,7 @@ namespace QA_Application
             });
             services.AddScoped<ICategoryRepository,CategoryRepository>();
             services.AddScoped<IQuestionRepository, QuestionRepository>();
+            services.AddScoped<IAnswerRepository, AnswerRepository>();
 
         }
 

@@ -8,46 +8,37 @@
 <h3>Questions</h3>
 
 <p>
-    <a class="btn btn-outline-info mb-2 mt-2" asp-action="AddQuestion" >Add Question</a>
+    <a class="btn btn-outline-info mb-2 mt-2" asp-action="AddQuestion">Add Question</a>
 </p>
 
 @foreach (var item in Model)
 {
-<div class="card bg-light mb-2 border-secondary">
-    <div style="background-color: mediumaquamarine;" >
-        UserName: @Html.DisplayFor(modelItem => item.UserName)
-    </div>
-    <div class="m-2">
-        Category: @item.CategoryName
-        <hr />
-    </div>
-    <div class="m-2">
-        Urgency Level: @Html.DisplayFor(modelItem => item.UrgencyLevel)
-        <hr />
-    </div>
-    <div class="m-2">
-        Title: @item.Title
-        <hr />
-    </div>
-    <div class="m-2">
-       Description: @item.QuestionBody
-    </div>
-    @if (item.Answer is not null)
-    {
-        <hr />
-        <div class="m-2">
-          Answer: @item.Answer
+    <div class="card bg-light mb-2 border-secondary">
+        <div style="background-color: mediumaquamarine;">
+            UserName: @Html.DisplayFor(modelItem => item.UserName)
         </div>
-    }
-    <div class="card-footer">
-        <a class="btn btn-outline-info" asp-action="Edit" asp-route-id="@item.QA_Id">Edit</a> |
-        @if (item.Answer is null)
-        {
-            <a class="btn btn-outline-info" asp-action="Answer" asp-route-id="@item.QA_Id">Answer</a> 
-        }
-        | <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.QA_Id">Delete</a>
+        <div class="m-2">
+            Category: @item.CategoryName
+            <hr />
+        </div>
+        <div class="m-2">
+            Urgency Level: @Html.DisplayFor(modelItem => item.UrgencyLevel)
+            <hr />
+        </div>
+        <div class="m-2">
+            Title: @item.Title
+            <hr />
+        </div>
+        <div class="m-2">
+            Description: @item.QuestionBody
+        </div>
+        <div class="card-footer">
+            | <a class="btn btn-outline-info" asp-action="AddAnswer" asp-route-id="@item.QA_Id">Add Answer</a>
+            | <a class="btn btn-outline-info" asp-action="ViewAnswers" asp-route-id="@item.QA_Id">View Answers</a>
+            | <a class="btn btn-outline-info" asp-action="Edit" asp-route-id="@item.QA_Id">Edit</a>
+            | <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.QA_Id">Delete</a>
+        </div>
     </div>
-</div>
 }
 
 

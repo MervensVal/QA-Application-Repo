@@ -10,16 +10,19 @@ namespace QA_Application.Models
     {
         [Key]
         public int QA_Id { get; set; }
-        //public string UserId { get; set; }
+
         public string UserName { get; set; }
+
         public int CategoryId { get; set; }
 
         [Display(Name = "Urgency Level")]
         public int UrgencyLevel { get; set; }
+
         public string Title { get; set; }
 
         [Display(Name = "Description")]
         public string QuestionBody { get; set; }
+
         public string Answer { get; set; }
     }
 }

@@ -13,13 +13,16 @@ namespace QA_Application.Areas.Employee
     [Area("employee")]
     public class QuestionController : Controller
     {
+        public static Question QuestionConst = null;
         private readonly IQuestionRepository _questionRepo;
         private readonly ICategoryRepository _categoryRepository;
+        private readonly IAnswerRepository _answerRepo;
 
-        public QuestionController(IQuestionRepository questionRepo, ICategoryRepository categoryRepository)
+        public QuestionController(IQuestionRepository questionRepo, ICategoryRepository categoryRepository, IAnswerRepository answerRepo)
         {
             _questionRepo = questionRepo;
             _categoryRepository = categoryRepository;
+            _answerRepo = answerRepo;
         }
 
         public IActionResult Index()
@@ -112,5 +115,51 @@ namespace QA_Application.Areas.Employee
             _questionRepo.Remove(q);
             return (RedirectToAction("Index"));
         }
+
+        //-------------------------------------------------------------------
+        //Add answer associated with Question
+        public IActionResult AddAnswer(int id)
+        {
+            QuestionConst = _questionRepo.FindQuestionById(id);
+            AddAnswerVM addAnswerVM = new AddAnswerVM
+            {
+                Question = _questionRepo.FindQuestionById(id)
+            };
+            return View(addAnswerVM);
+        }
+
+        [HttpPost]
+        public IActionResult AddAnswer(Answer a)
+        {
+            if (ModelState.IsValid)
+            {
+                if (a.UserName is null)
+                {
+                    // will give the user's userId
+                    //q.UserName = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                    a.UserName = User.Identity.Name;
+                    a.Date = DateTime.Now;
+                    a.QA_Id = QuestionConst.QA_Id;
+                }
+                _answerRepo.addAnswer(a);
+                return (RedirectToAction("Index"));
+            }
+            AddAnswerVM addAnswerVM = new AddAnswerVM
+            {
+                Question = QuestionConst
+            };
+            return View(addAnswerVM);
+        }
+
+        // View all answer associated with a question
+        public IActionResult ViewAnswers(int id) 
+        {
+            ViewData["Question"] = _questionRepo.FindQuestionById(id).QuestionBody;
+            var answers = _answerRepo.viewAllAnswers(id);
+            return View(answers);
+        }
+
+
+
     }
 }
