@@ -10,11 +10,9 @@ namespace QA_Application.Models
     {
         [Key]
         public int CategoryId { get; set; }
-
         [Required]
         [Display(Name = "Category")]
         public string CategoryName { get; set; }
-
         public string Archive { get; set; }
     }
 }

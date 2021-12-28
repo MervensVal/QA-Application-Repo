@@ -8,6 +8,7 @@ namespace QA_Application.ViewModels
     public class ViewQuestionVM
     {
         public int QA_Id { get; set; }
+        public DateTime Date { get; set; }
         public string UserName { get; set; }
         public string CategoryName { get; set; }
         public int UrgencyLevel { get; set; }

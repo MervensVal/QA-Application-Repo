@@ -35,7 +35,6 @@ namespace QA_Application.Models
                     UserName = ans.UserName,
                     Date = ans.Date,
                     AnswerBody = ans.AnswerBody,
-                    //QA_Id = ques.QA_Id,
                     Title = ques.Title,
                     QuestionBody = ques.QuestionBody
                 }
@@ -45,13 +44,5 @@ namespace QA_Application.Models
         }
     }
 }
-
-//public int AnswerId { get; set; }
-//public string UserName { get; set; }
-//public DateTime Date { get; set; }
-//public string AnswerBody { get; set; }
-//public int QA_Id { get; set; }
-//public string Title { get; set; }
-//public string QuestionBody { get; set; }
 
 

@@ -50,6 +50,7 @@ namespace QA_Application.Areas.Employee
                     // will give the user's userId
                     //q.UserName = User.FindFirstValue(ClaimTypes.NameIdentifier);
                     q.UserName = User.Identity.Name;
+                    q.Date = DateTime.Now;
                 }
                 _questionRepo.AddQuestion(q);
                 return (RedirectToAction("Index"));
@@ -61,21 +62,6 @@ namespace QA_Application.Areas.Employee
             return View(addQuestionVM);
         }
 
-        public IActionResult Answer(int id) 
-        {
-            return View(_questionRepo.FindQuestionById(id));
-        }
-
-        [HttpPost]
-        public IActionResult Answer(Question q)
-        {
-            if (ModelState.IsValid) 
-            {
-                _questionRepo.EditQuestion(q);
-                return (RedirectToAction("Index"));
-            }
-            return View(q);
-        }
 
         public IActionResult Edit(int id)
         {
@@ -158,8 +144,5 @@ namespace QA_Application.Areas.Employee
             var answers = _answerRepo.viewAllAnswers(id);
             return View(answers);
         }
-
-
-
     }
 }

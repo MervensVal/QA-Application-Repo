@@ -13,6 +13,6 @@ namespace QA_Application.Models
         public void EditQuestion(Question q);
         public Question FindQuestionById(int id);
         public void Remove(Question q);
-
     }
 }
+

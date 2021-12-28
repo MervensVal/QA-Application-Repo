@@ -53,7 +53,6 @@ namespace QA_Application.Models
                             UrgencyLevel = ques.UrgencyLevel,
                             Title = ques.Title,
                             QuestionBody = ques.QuestionBody,
-                            Answer = ques.Answer
                         }
                     );
             return result.ToList();
