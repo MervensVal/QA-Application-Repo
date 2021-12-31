@@ -12,7 +12,7 @@
 <h4>Question</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div>
         <form asp-action="AddQuestion">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group">
@@ -33,12 +33,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="Question.Title" class="control-label"></label>
-                <input name="Title" class="form-control"/>
+                <input name="Title" class="form-control" required maxlength="100"/>
                 <span asp-validation-for="Question.Title" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Question.QuestionBody" class="control-label"></label>
-                <textarea name="QuestionBody" class="form-control" rows="10" cols="20"></textarea>
+                <textarea name="QuestionBody" class="form-control" rows="30" cols="100" required maxlength="7500"></textarea>
                 <span asp-validation-for="Question.QuestionBody" class="text-danger"></span>
             </div>
             <div class="form-group">

@@ -10,17 +10,17 @@
 <hr />
 @*Need to use linq in repo to get Question info*@
 <div class="row">
-    <div class="col-md-4">
+    <div>
         <form asp-action="AddAnswer">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label class="control-label">Question</label>
-                <textarea name="QuestionBody" class="form-control" readonly asp-for="Question.QuestionBody"> </textarea>
+                <textarea name="QuestionBody" class="form-control" readonly asp-for="Question.QuestionBody" rows="30" cols="100"> </textarea>
                 <span asp-validation-for="Question.QuestionBody" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="control-label">Answer</label>
-                <input name="AnswerBody" class="form-control" asp-for="Answer.AnswerBody">
+                <textarea name="AnswerBody" class="form-control" asp-for="Answer.AnswerBody" required maxlength="3500" rows="30" cols="100"></textarea>
                 <span asp-validation-for="Answer.AnswerBody" class="text-danger"></span>
             </div>
             <div class="form-group">

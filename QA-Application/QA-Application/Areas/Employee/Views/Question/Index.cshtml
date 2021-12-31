@@ -33,8 +33,10 @@
         Title: @item.Title
         <hr />
     </div>
-    <div class="m-2">
-        Description: @item.QuestionBody
+    <div class="m-2 card-body">
+        Description:
+        <br/>
+        <textarea readonly rows="30" cols="120"> @item.QuestionBody</textarea>
     </div>
     <div class="card-footer">
         | <a class="btn btn-outline-info" asp-action="AddAnswer" asp-route-id="@item.QA_Id">Add Answer</a>

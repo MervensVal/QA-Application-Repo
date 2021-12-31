@@ -22,6 +22,17 @@ namespace QA_Application.Models
             _db.SaveChanges();
         }
 
+        public Answer FindAnswerById(int id)
+        {
+            return (_db.Answer.FirstOrDefault(a => a.AnswerId == id));
+        }
+
+        public void Remove(Answer a)
+        {
+            _db.Answer.Remove(a);
+            _db.SaveChanges();
+        }
+
         public IEnumerable<ViewAnswerVM> viewAllAnswers(int id)
         {
                     var result = _db.Question.Join(
@@ -41,6 +52,11 @@ namespace QA_Application.Models
             );
             var filteredResult = result.ToList().Where(a => a.QA_Id == id);
             return filteredResult;
+        }
+
+        public IEnumerable<Answer> AllAnswers() 
+        {
+            return _db.Answer.ToList();
         }
     }
 }

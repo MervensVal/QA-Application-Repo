@@ -98,6 +98,11 @@ namespace QA_Application.Areas.Employee
         [HttpPost]
         public IActionResult Delete(Question q)
         {
+            var listOfAnswers = _answerRepo.AllAnswers().Where(a => a.QA_Id == q.QA_Id);
+            foreach(var answer in listOfAnswers) 
+            {
+               _answerRepo.Remove(answer);
+            }
             _questionRepo.Remove(q);
             return (RedirectToAction("Index"));
         }
