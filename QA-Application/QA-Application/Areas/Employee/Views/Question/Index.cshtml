@@ -11,6 +11,20 @@
     <a class="btn btn-outline-info mb-2 mt-2" asp-action="AddQuestion">Add Question</a>
 </p>
 
+<form asp-action="FilterByCategory" class="col-5">
+    <label>Filter By Urgency Level:</label>
+    <select name="UrgencyLevel" class="form-control">
+        <option value="1">1 Very Low</option>
+        <option value="2">2 Low</option>
+        <option value="3">3 Average</option>
+        <option value="4">4 High</option>
+        <option value="5">5 Vey High</option>
+    </select>     
+    </br>
+    <input type="submit" value="Filter" class="btn btn-info">
+    <a class="btn btn-secondary" asp-action="Index">Clear Filter</a>
+</form>
+ </br>
 @foreach (var item in Model)
 {
 <div class="card bg-light mb-2 border-secondary">
@@ -36,7 +50,7 @@
     <div class="m-2 card-body">
         Description:
         <br/>
-        <textarea readonly rows="30" cols="120"> @item.QuestionBody</textarea>
+        <textarea readonly rows="30" cols="120" class="col-12"> @item.QuestionBody</textarea>
     </div>
     <div class="card-footer">
         | <a class="btn btn-outline-info" asp-action="AddAnswer" asp-route-id="@item.QA_Id">Add Answer</a>
@@ -46,6 +60,7 @@
     </div>
 </div>
 }
+
 
 
 

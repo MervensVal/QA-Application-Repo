@@ -8,8 +8,9 @@
     "\\QA-Application\\QA-Application\\Areas\\Employee\\Controllers",
     "\\QA-Application\\QA-Application\\Areas\\Employee\\Views",
     "\\QA-Application\\QA-Application\\Areas\\Employee\\Views\\Question",
-    "\\QA-Application\\QA-Application\\Models"
+    "\\QA-Application\\QA-Application\\Models",
+    "\\QA-Application\\QA-Application\\obj"
   ],
-  "SelectedNode": "\\QA-Application\\QA-Application\\Areas\\Employee\\Controllers\\QuestionController.cs",
+  "SelectedNode": "\\QA-Application\\QA-Application\\Areas\\Employee\\Views\\Question\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }
