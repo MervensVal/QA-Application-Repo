@@ -11,20 +11,25 @@
     <a class="btn btn-outline-info mb-2 mt-2" asp-action="AddQuestion">Add Question</a>
 </p>
 
-<form asp-action="FilterByCategory" class="col-5">
+<form asp-action="Index" class="col-5">
     <label>Filter By Urgency Level:</label>
     <select name="UrgencyLevel" class="form-control">
+        <option value="0">--Select a Level--</option>
         <option value="1">1 Very Low</option>
         <option value="2">2 Low</option>
         <option value="3">3 Average</option>
         <option value="4">4 High</option>
         <option value="5">5 Vey High</option>
     </select>     
-    </br>
+    <br/>
     <input type="submit" value="Filter" class="btn btn-info">
     <a class="btn btn-secondary" asp-action="Index">Clear Filter</a>
 </form>
- </br>
+ <br/>
+@if (Model.ToList().Count == 0) 
+{
+    <h3 class="text-center text-secondary">No Questions to Display</h3>
+}
 @foreach (var item in Model)
 {
 <div class="card bg-light mb-2 border-secondary">

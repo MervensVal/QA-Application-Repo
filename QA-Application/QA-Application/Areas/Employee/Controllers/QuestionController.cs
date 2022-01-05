@@ -25,12 +25,19 @@ namespace QA_Application.Areas.Employee
             _answerRepo = answerRepo;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int UrgencyLevel)
         {
+            if (UrgencyLevel != 0) 
+            {
+                return View(_questionRepo.ViewAllQuestions().Where(q => q.UrgencyLevel == UrgencyLevel));
+            }
             ViewData["UserEmail"] = User.FindFirstValue(ClaimTypes.Email);
             return View(_questionRepo.ViewAllQuestions());
         }
-
+        //public IActionResult FilterByUrgencyLevel(int UrgencyLevel) 
+        //{
+        //    return View(_questionRepo.ViewAllQuestions().Where(q => q.UrgencyLevel == UrgencyLevel));
+        //}
         public IActionResult AddQuestion()
         {
             AddQuestionVM addQuestionVM = new AddQuestionVM
