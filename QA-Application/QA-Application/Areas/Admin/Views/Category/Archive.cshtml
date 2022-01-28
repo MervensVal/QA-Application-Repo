@@ -25,20 +25,22 @@
                 Yes: @Html.RadioButtonFor(c => c.Archive, "Yes")
                 No:  @Html.RadioButtonFor(c => c.Archive, "No")
 
-                @*Yes:   @Html.RadioButton("Archive", "Yes")
-        No: @Html.RadioButton("Archive", "No")*@
+                @*Yes:@Html.RadioButton("Archive", "Yes")
+                    No: @Html.RadioButton("Archive", "No")*@
 
                 @*Yes: <input type="radio" id="archiveYes" name="archiveYes" value="Yes" asp-for="Archive">
-        No: <input type="radio" id="archiveNo" name="archiveNo" value="No" asp-for="Archive">*@
+                    No: <input type="radio" id="archiveNo" name="archiveNo" value="No" asp-for="Archive">*@
+
                 @*<select name="Archive" asp-for="Archive">
-                    <option value="No">No</option>
-                    <option value="Yes">Yes</option>
-                </select>*@
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select>*@
             </td>
         </tr>
     </table>
     <input type="hidden" asp-for="CategoryName">
     <input type="hidden" asp-for="CategoryId">
+    <br/>
     <input class="btn btn-warning" type="submit" value="submit">
     <a class="btn btn-primary" asp-area="Admin" asp-controller="Category" asp-action="Index">Back to List</a>
 </form>

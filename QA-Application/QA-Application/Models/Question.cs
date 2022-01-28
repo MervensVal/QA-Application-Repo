@@ -15,8 +15,10 @@ namespace QA_Application.Models
         public int CategoryId { get; set; }
         [Display(Name = "Urgency Level")]
         public int UrgencyLevel { get; set; }
+        [MaxLength(100, ErrorMessage = "Title can only be up to 100 characters")]
         public string Title { get; set; }
         [Display(Name = "Description")]
+        [MaxLength(8000, ErrorMessage = "Your question can only be up to 8000 characters")]
         public string QuestionBody { get; set; }
     }
 }

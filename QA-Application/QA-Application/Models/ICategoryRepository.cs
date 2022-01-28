@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace QA_Application.Models
 {
-   public interface ICategoryRepository
+    public interface ICategoryRepository
     {
         public IEnumerable<Category> viewAllCategories();
         public void addCategory(Category c);
         public Category getCategoryById(int id);
-        public void archive(Category c); 
+        public void archive(Category c);
     }
 }
 

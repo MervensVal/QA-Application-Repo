@@ -16,7 +16,5 @@ namespace QA_Application.Data
         public DbSet<Category> Category { get; set; }
         public DbSet<Question> Question { get; set; }
         public DbSet<Answer> Answer { get; set; }
-
-
     }
 }

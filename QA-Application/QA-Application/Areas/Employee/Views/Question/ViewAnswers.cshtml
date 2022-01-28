@@ -13,25 +13,31 @@
 </p>
 
 <label class="control-label">Question</label>
-<div class="card bg-light mb-2 border-secondary" width="50"> 
+<div class="card bg-light mb-2 border-secondary" width="50">
     @ViewData["Question"]
 </div>
-@if( Model is not null) {
+
+@if (Model is not null)
+{
+    @if (Model.ToList().Count == 0)
+    {
+        <h3 class="text-center text-secondary">No Answers to Display</h3>
+    }
     @foreach (var item in Model)
     {
-    <div class="card bg-light mb-2 border-secondary">
-        <div style="background-color: mediumaquamarine;">
-            Userneame: @item.UserName
+        <div class="card bg-light mb-2 border-secondary">
+            <div style="background-color: mediumaquamarine;">
+                Userneame: @item.UserName
+            </div>
+            <div class="m-2">
+                Date Answered:  @item.Date
+                <hr />
+            </div>
+            <div class="m-2">
+                Answer: @item.AnswerBody
+                <hr />
+            </div>
         </div>
-        <div class="m-2">
-            Date Answered:  @item.Date
-            <hr />
-        </div>
-        <div class="m-2">
-            Answer: @item.AnswerBody
-            <hr />
-        </div>
-    </div>
     }
 }
 

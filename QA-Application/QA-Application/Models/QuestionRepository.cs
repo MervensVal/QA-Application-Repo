@@ -23,8 +23,8 @@ namespace QA_Application.Models
 
         public void EditQuestion(Question q)
         {
+            //_db.Entry(q).State = Microsoft.EntityFrameworkCore.EntityState.Modified; <- Method 2
             _db.Question.Update(q);
-            //_db.Entry(q).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             _db.SaveChanges();
         }
 
@@ -41,20 +41,21 @@ namespace QA_Application.Models
 
         public IEnumerable<ViewQuestionVM> ViewAllQuestions()
         {
-                var result = _db.Category.Join(
-                    _db.Question,
-                    cat => cat.CategoryId,
-                    ques => ques.CategoryId,
-                    (cat, ques) => new ViewQuestionVM
-                        {
-                            QA_Id = ques.QA_Id,
-                            UserName = ques.UserName,
-                            CategoryName = cat.CategoryName,
-                            UrgencyLevel = ques.UrgencyLevel,
-                            Title = ques.Title,
-                            QuestionBody = ques.QuestionBody,
-                        }
-                    );
+            var result = _db.Category.Join(
+                _db.Question,
+                cat => cat.CategoryId,
+                ques => ques.CategoryId,
+                (cat, ques) => new ViewQuestionVM
+                {
+                    QA_Id = ques.QA_Id,
+                    UserName = ques.UserName,
+                    CategoryName = cat.CategoryName,
+                    UrgencyLevel = ques.UrgencyLevel,
+                    Title = ques.Title,
+                    QuestionBody = ques.QuestionBody,
+                    Date = ques.Date
+                }
+                );
             return result.ToList();
         }
     }

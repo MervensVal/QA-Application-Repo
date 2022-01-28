@@ -18,7 +18,7 @@ namespace QA_Application.Models
 
         public IEnumerable<Category> viewAllCategories()
         {
-                return _db.Category.ToList();
+            return _db.Category.ToList();
         }
 
         public void addCategory(Category c)

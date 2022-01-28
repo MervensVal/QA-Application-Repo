@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<QA_Application.ViewModels.ViewQuestionVM>
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 @{
     ViewData["Title"] = "Index";
@@ -20,53 +21,54 @@
         <option value="3">3 Average</option>
         <option value="4">4 High</option>
         <option value="5">5 Vey High</option>
-    </select>     
-    <br/>
+    </select>
+    <br />
     <input type="submit" value="Filter" class="btn btn-info">
     <a class="btn btn-secondary" asp-action="Index">Clear Filter</a>
 </form>
- <br/>
-@if (Model.ToList().Count == 0) 
+<br />
+@if (Model.Count() == 0)
 {
     <h3 class="text-center text-secondary">No Questions to Display</h3>
 }
+
+@*@Html.DisplayFor(modelItem => item.prop) and @item.prop is the same thing*@
 @foreach (var item in Model)
 {
-<div class="card bg-light mb-2 border-secondary">
-    <div style="background-color: mediumaquamarine;">
-        UserName: @Html.DisplayFor(modelItem => item.UserName)
+    <hr />
+    <div class="card bg-light mb-2 border-secondary">
+        <div style="background-color: lightblue;">
+            <b>UserName: @Html.DisplayFor(modelItem => item.UserName)</b>
+        </div>
+        <div class="mb-2" style="background-color: lightblue;">
+            Date Posted: @item.Date
+        </div>
+        <div class="m-2">
+            Category: @item.CategoryName
+            <hr />
+        </div>
+        <div class="m-2">
+            Urgency Level: @item.UrgencyLevel
+            <hr />
+        </div>
+        <div class="m-2">
+            Title: @item.Title
+            <hr />
+        </div>
+        <div class="m-2 card-body">
+            Description:
+            <br />
+            <textarea readonly rows="30" cols="120" class="col-12"> @item.QuestionBody</textarea>
+        </div>
+        <div class="card-footer">
+            | <a class="btn btn-outline-info" asp-action="AddAnswer" asp-route-id="@item.QA_Id">Add Answer</a>
+            | <a class="btn btn-outline-info" asp-action="ViewAnswers" asp-route-id="@item.QA_Id">View Answers</a>
+            | <a class="btn btn-outline-info" asp-action="Edit" asp-route-id="@item.QA_Id">Edit</a>
+            | <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.QA_Id">Delete</a>
+        </div>
     </div>
-    <div class="m-2">
-        Date Posted: @item.Date
-        <hr />
-    </div>
-    <div class="m-2">
-        Category: @item.CategoryName
-        <hr />
-    </div>
-    <div class="m-2">
-        Urgency Level: @Html.DisplayFor(modelItem => item.UrgencyLevel)
-        <hr />
-    </div>
-    <div class="m-2">
-        Title: @item.Title
-        <hr />
-    </div>
-    <div class="m-2 card-body">
-        Description:
-        <br/>
-        <textarea readonly rows="30" cols="120" class="col-12"> @item.QuestionBody</textarea>
-    </div>
-    <div class="card-footer">
-        | <a class="btn btn-outline-info" asp-action="AddAnswer" asp-route-id="@item.QA_Id">Add Answer</a>
-        | <a class="btn btn-outline-info" asp-action="ViewAnswers" asp-route-id="@item.QA_Id">View Answers</a>
-        | <a class="btn btn-outline-info" asp-action="Edit" asp-route-id="@item.QA_Id">Edit</a>
-        | <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.QA_Id">Delete</a>
-    </div>
-</div>
+    <br />
 }
-
-
 
 
 

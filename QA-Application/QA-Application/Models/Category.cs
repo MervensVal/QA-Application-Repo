@@ -10,9 +10,13 @@ namespace QA_Application.Models
     {
         [Key]
         public int CategoryId { get; set; }
+
         [Required]
+        [MaxLength(40, ErrorMessage = "Category name can only be up to 40 characters")]
         [Display(Name = "Category")]
         public string CategoryName { get; set; }
+
+        [MaxLength(40, ErrorMessage = "Archive can only be up to 5 characters max")]
         public string Archive { get; set; }
     }
 }

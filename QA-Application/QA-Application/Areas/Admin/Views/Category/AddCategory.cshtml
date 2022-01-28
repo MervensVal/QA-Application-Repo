@@ -8,6 +8,7 @@
 <h3>Add Category</h3>
 
 <form asp-action="AddCategory">
+    <br/>
     <table>
         <tr>
             <td>
@@ -19,7 +20,8 @@
             </td>
         </tr>
     </table>
+    <br/>
     <input type="hidden" asp-for="Archive" value="No">
     <input class="btn btn-success" type="submit" value="submit">
-    <a class="btn btn-secondary"  asp-area="Admin" asp-controller="Category" asp-action="Index">Back to List</a>
+    <a class="btn btn-secondary" asp-area="Admin" asp-controller="Category" asp-action="Index">Back to List</a>
 </form>

@@ -7,7 +7,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-
 namespace QA_Application.Areas.Employee
 {
     [Area("employee")]
@@ -25,19 +24,14 @@ namespace QA_Application.Areas.Employee
             _answerRepo = answerRepo;
         }
 
-        public IActionResult Index(int UrgencyLevel)
+        public IActionResult Index(int UrgencyLevel) 
         {
             if (UrgencyLevel != 0) 
             {
                 return View(_questionRepo.ViewAllQuestions().Where(q => q.UrgencyLevel == UrgencyLevel));
             }
-            ViewData["UserEmail"] = User.FindFirstValue(ClaimTypes.Email);
             return View(_questionRepo.ViewAllQuestions());
         }
-        //public IActionResult FilterByUrgencyLevel(int UrgencyLevel) 
-        //{
-        //    return View(_questionRepo.ViewAllQuestions().Where(q => q.UrgencyLevel == UrgencyLevel));
-        //}
         public IActionResult AddQuestion()
         {
             AddQuestionVM addQuestionVM = new AddQuestionVM
@@ -54,10 +48,11 @@ namespace QA_Application.Areas.Employee
             {
                 if (q.UserName is null)
                 {
-                    // will give the user's userId
-                    //q.UserName = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                    // will give the user's userId [q.UserName = User.FindFirstValue(ClaimTypes.NameIdentifier);]
                     q.UserName = User.Identity.Name;
-                    q.Date = DateTime.Now;
+                    DateTime currentDate = new DateTime();
+                    currentDate = DateTime.Now;
+                    q.Date = currentDate;
                 }
                 _questionRepo.AddQuestion(q);
                 return (RedirectToAction("Index"));
@@ -70,8 +65,10 @@ namespace QA_Application.Areas.Employee
         }
 
 
+
         public IActionResult Edit(int id)
         {
+            //Using AddQuestionVM view model instead of creating a EditQuestionVM to save time. Reused the VM
             AddQuestionVM editQuestionVM = new AddQuestionVM
             {
                 Categories = _categoryRepository.viewAllCategories().Where(c => c.Archive == "No"),
@@ -114,7 +111,6 @@ namespace QA_Application.Areas.Employee
             return (RedirectToAction("Index"));
         }
 
-        //-------------------------------------------------------------------
         //Add answer associated with Question
         public IActionResult AddAnswer(int id)
         {
@@ -133,8 +129,7 @@ namespace QA_Application.Areas.Employee
             {
                 if (a.UserName is null)
                 {
-                    // will give the user's userId
-                    //q.UserName = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                    // will give the user's userId <- q.UserName = User.FindFirstValue(ClaimTypes.NameIdentifier);
                     a.UserName = User.Identity.Name;
                     a.Date = DateTime.Now;
                     a.QA_Id = QuestionConst.QA_Id;
