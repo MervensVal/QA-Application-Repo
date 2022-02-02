@@ -5,13 +5,12 @@
     "\\QA-Application\\QA-Application",
     "\\QA-Application\\QA-Application\\Areas",
     "\\QA-Application\\QA-Application\\Areas\\Employee",
-    "\\QA-Application\\QA-Application\\Areas\\Employee\\Controllers",
     "\\QA-Application\\QA-Application\\Areas\\Employee\\Views",
     "\\QA-Application\\QA-Application\\Areas\\Employee\\Views\\Question",
     "\\QA-Application\\QA-Application\\Models",
     "\\QA-Application\\QA-Application\\obj",
     "\\QA-Application\\QA-Application\\ViewModels"
   ],
-  "SelectedNode": "\\QA-Application\\QA-Application\\Models\\QuestionRepository.cs",
+  "SelectedNode": "\\QA-Application\\QA-Application\\Areas\\Employee\\Views\\Question\\Edit.cshtml",
   "PreviewInSolutionExplorer": false
 }

@@ -145,9 +145,10 @@ namespace QA_Application.Areas.Employee
         }
 
         // View all answer associated with a question
-        public IActionResult ViewAnswers(int id) 
+        public IActionResult ViewAnswers(int id)
         {
-            ViewData["Question"] = _questionRepo.FindQuestionById(id).QuestionBody;
+            //Method 2 but less effective for obtaining data from controller to view
+            //ViewData["Question"] = _questionRepo.FindQuestionById(id).QuestionBody;
             var answers = _answerRepo.viewAllAnswers(id);
             return View(answers);
         }
