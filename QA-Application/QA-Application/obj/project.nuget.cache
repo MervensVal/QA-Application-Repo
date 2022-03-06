@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ab+2P11QDGnOW7pcY+VsrcPUwetyla3pHuBSQetPpfqyfshRC6S03D3KEql2pIxL51LrFmvSOYoaN410eJanzA==",
+  "dgSpecHash": "akAtiyks3YepeBQXqeUNqY6lqDq5v1sKpEuxg6SbpldEXbrz/UKVS1PuVwwLoV3kuonwmYymUZLxhQ5Gr1aq0w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\valme\\Source\\Repos\\MervensVal\\QA-Application-Repo\\QA-Application\\QA-Application\\QA-Application.csproj",
+  "projectFilePath": "C:\\Users\\valme\\source\\repos\\MervensVal\\QA-Application-Repo\\QA-Application\\QA-Application\\QA-Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\valme\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\valme\\.nuget\\packages\\microsoft.aspnetcore.authorization\\5.0.12\\microsoft.aspnetcore.authorization.5.0.12.nupkg.sha512",

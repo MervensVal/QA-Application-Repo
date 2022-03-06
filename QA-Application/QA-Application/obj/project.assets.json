@@ -7910,11 +7910,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\valme\\Source\\Repos\\MervensVal\\QA-Application-Repo\\QA-Application\\QA-Application\\QA-Application.csproj",
+      "projectUniqueName": "C:\\Users\\valme\\source\\repos\\MervensVal\\QA-Application-Repo\\QA-Application\\QA-Application\\QA-Application.csproj",
       "projectName": "QA-Application",
-      "projectPath": "C:\\Users\\valme\\Source\\Repos\\MervensVal\\QA-Application-Repo\\QA-Application\\QA-Application\\QA-Application.csproj",
+      "projectPath": "C:\\Users\\valme\\source\\repos\\MervensVal\\QA-Application-Repo\\QA-Application\\QA-Application\\QA-Application.csproj",
       "packagesPath": "C:\\Users\\valme\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\valme\\Source\\Repos\\MervensVal\\QA-Application-Repo\\QA-Application\\QA-Application\\obj\\",
+      "outputPath": "C:\\Users\\valme\\source\\repos\\MervensVal\\QA-Application-Repo\\QA-Application\\QA-Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\valme\\AppData\\Roaming\\NuGet\\NuGet.Config",

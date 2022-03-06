@@ -24,6 +24,8 @@ namespace QA_Application.Areas.Identity.Pages.Account.Manage
 
         public string Username { get; set; }
 
+        public string Name { get; set; }
+
         [TempData]
         public string StatusMessage { get; set; }
 

@@ -6,11 +6,8 @@
     "\\QA-Application\\QA-Application\\Areas",
     "\\QA-Application\\QA-Application\\Areas\\Employee",
     "\\QA-Application\\QA-Application\\Areas\\Employee\\Views",
-    "\\QA-Application\\QA-Application\\Areas\\Employee\\Views\\Question",
-    "\\QA-Application\\QA-Application\\Models",
-    "\\QA-Application\\QA-Application\\obj",
-    "\\QA-Application\\QA-Application\\ViewModels"
+    "\\QA-Application\\QA-Application\\Areas\\Employee\\Views\\Question"
   ],
-  "SelectedNode": "\\QA-Application\\QA-Application\\Areas\\Employee\\Views\\Question\\Edit.cshtml",
+  "SelectedNode": "\\QA-Application\\QA-Application\\Areas\\Employee\\Views\\Question\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }

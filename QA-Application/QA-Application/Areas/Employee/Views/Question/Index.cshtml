@@ -1,39 +1,40 @@
 ﻿@model IEnumerable<QA_Application.ViewModels.ViewQuestionVM>
-<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
-@{
+    @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}
+    }
 
-<h3>List of Questions</h3>
+    <h3>List of Questions</h3>
 
-<p>
-    <a class="btn btn-outline-info mb-2 mt-2" asp-action="AddQuestion">Add Question</a>
-</p>
+    <p>
+        <a class="btn btn-outline-info mb-2 mt-2" asp-action="AddQuestion">Add Question</a>
+    </p>
 
-<form asp-action="Index" class="col-5">
-    <label>Filter By Urgency Level:</label>
-    <select name="UrgencyLevel" class="form-control">
-        <option value="0">--Select a Level--</option>
-        <option value="1">1 Very Low</option>
-        <option value="2">2 Low</option>
-        <option value="3">3 Average</option>
-        <option value="4">4 High</option>
-        <option value="5">5 Vey High</option>
-    </select>
+    <form asp-action="Index" class="col-5">
+        @*<input type="search" id="qsearch" name="qsearch" placeholder="Search Question" class="form-control">*@
+        <label>Filter By Urgency Level:</label>
+        <select name="UrgencyLevel" class="form-control">
+            <option value="0">--Select a Level--</option>
+            <option value="1">1 Very Low</option>
+            <option value="2">2 Low</option>
+            <option value="3">3 Average</option>
+            <option value="4">4 High</option>
+            <option value="5">5 Vey High</option>
+        </select>
+        <br />
+        <input type="submit" value="Filter" class="btn btn-info">
+        <a class="btn btn-secondary" asp-action="Index">Clear Filter</a>
+    </form>
     <br />
-    <input type="submit" value="Filter" class="btn btn-info">
-    <a class="btn btn-secondary" asp-action="Index">Clear Filter</a>
-</form>
-<br />
-@if (Model.Count() == 0)
+    @if (Model.Count() == 0)
 {
     <h3 class="text-center text-secondary">No Questions to Display</h3>
 }
 
-@*@Html.DisplayFor(modelItem => item.prop) and @item.prop is the same thing*@
-@foreach (var item in Model)
+    @*@Html.DisplayFor(modelItem => item.prop) and @item.prop is the same thing*@
+    @foreach (var item in Model)
 {
     <hr />
     <div class="card bg-light mb-2 border-secondary">
