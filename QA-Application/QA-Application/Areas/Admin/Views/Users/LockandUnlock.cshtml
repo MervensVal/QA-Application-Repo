@@ -1,0 +1,81 @@
+﻿@using QA_Application.Models
+@model ApplicationUser
+@{
+    ViewData["Title"] = "LockandUnlock";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="LockandUnlock">
+            <div>
+                <hr />
+                <dl class="row text-black-50">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+                    <dt class="col-sm-2">
+                        Manage Access
+                    </dt>
+                    <dd class="col-sm-10">
+                        @if (Model != null)
+                        {
+                            @if (Model.LockoutEnd > DateTime.Now)
+                            {
+                                <p>User is currently <b class="text-danger">locked</b></p>
+                                <input type="hidden" asp-for="Id">
+                                <input type="hidden" asp-for="Email">
+                                <input type="hidden" asp-for="EmailConfirmed">
+                                <input type="hidden" asp-for="NormalizedEmail">
+                                <input type="hidden" asp-for="UserName">
+                                <input type="hidden" asp-for="NormalizedUserName">
+                                <input type="hidden" asp-for="PasswordHash">
+                                <input type="hidden" asp-for="SecurityStamp">
+                                <input type="hidden" asp-for="ConcurrencyStamp">
+                                <input type="hidden" asp-for="PhoneNumber">
+                                <input type="hidden" asp-for="PhoneNumberConfirmed">
+                                <input type="hidden" asp-for="TwoFactorEnabled">
+                                <input type="hidden" asp-for="LockoutEnd">
+                                <input type="hidden" asp-for="LockoutEnabled">
+                                <input type="hidden" asp-for="AccessFailedCount">
+                                <input type="hidden" asp-for="Name">
+                                <input type="submit" value="Unlock User" class="btn btn-success btn-lg">
+                            }
+                            else
+                            {
+                                <input type="hidden" asp-for="Id">
+                                <input type="hidden" asp-for="Email">
+                                <input type="hidden" asp-for="EmailConfirmed">
+                                <input type="hidden" asp-for="NormalizedEmail">
+                                <input type="hidden" asp-for="UserName">
+                                <input type="hidden" asp-for="NormalizedUserName">
+                                <input type="hidden" asp-for="PasswordHash">
+                                <input type="hidden" asp-for="SecurityStamp">
+                                <input type="hidden" asp-for="ConcurrencyStamp">
+                                <input type="hidden" asp-for="PhoneNumber">
+                                <input type="hidden" asp-for="PhoneNumberConfirmed">
+                                <input type="hidden" asp-for="TwoFactorEnabled">
+                                <input type="hidden" asp-for="LockoutEnabled">
+                                <input type="hidden" asp-for="AccessFailedCount">
+                                <input type="hidden" asp-for="LockoutEnd">
+                                <input type="hidden" asp-for="Name">
+                                <p>User is currently <b class="text-success">active</b></p>
+                                <input type="hidden" asp-for="Id">
+                                <input type="submit" value="Lock User" class="btn btn-danger btn-lg">
+                            }
+                        }
+                    </dd>
+                </dl>
+            </div>
+        </form>
+    </div>
+</div>

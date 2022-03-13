@@ -8,7 +8,8 @@ namespace QA_Application.Models
     public interface IUsersRepository
     {
         public IEnumerable<ApplicationUser> GetAllUsers();
-        public void LockUnlockUsers();
+        public void LockUnlockUsers(ApplicationUser user);
+        public ApplicationUser getUserbyId(string id);
 
     }
 }

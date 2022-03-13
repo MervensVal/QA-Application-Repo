@@ -20,5 +20,22 @@ namespace QA_Application.Areas.Admin.Controllers
         {
             return View(_userRepo.GetAllUsers());
         }
+
+        public IActionResult LockandUnlock(string id)
+        {
+            ApplicationUser user = _userRepo.getUserbyId(id);
+            return View(user);
+        }
+
+        [HttpPost]
+        public IActionResult LockandUnlock(ApplicationUser user) 
+        {
+            if (ModelState.IsValid) 
+            {
+                _userRepo.LockUnlockUsers(user);
+                return (RedirectToAction("Index"));
+            }
+            return View(user);
+        }
     }
 }
