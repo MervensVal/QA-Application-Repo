@@ -114,7 +114,7 @@ namespace QA_Application.Areas.Identity.Pages.Account
                 {
                     _logger.LogInformation("User created a new account with password.");
 
-                    //if the role does not exist create it
+                    //if the role does not exist create it (Similar code added in DB initializer for learning purposes)
                     if (!await _roleManager.RoleExistsAsync(Constants.RoleAdmin))
                     {
                         await _roleManager.CreateAsync(new IdentityRole(Constants.RoleAdmin));
