@@ -41,7 +41,7 @@ namespace QA_Application
             services.AddIdentity<IdentityUser, IdentityRole>().AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddSingleton<IEmailSender, EmailSender>();
-            //services.AddScoped<IDbInitializer, DbInitializer>();
+            services.AddScoped<IDbInitializer, DbInitializer>();
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.ConfigureApplicationCookie(options =>
@@ -57,7 +57,7 @@ namespace QA_Application
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IDbInitializer dbInitializer)
         {
             if (env.IsDevelopment())
             {
@@ -77,6 +77,11 @@ namespace QA_Application
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            dbInitializer.initialize();
+
+            //dbInitializer.Initialize();
+
 
             //app.UseEndpoints(endpoints =>
             //{

@@ -49,6 +49,7 @@
                                 <input type="hidden" asp-for="AccessFailedCount">
                                 <input type="hidden" asp-for="Name">
                                 <input type="submit" value="Unlock User" class="btn btn-success btn-lg">
+                                <a asp-area="Admin" asp-controller="Users" asp-action="Index" class="btn btn-lg btn-secondary">Cancel</a>
                             }
                             else
                             {
@@ -71,6 +72,7 @@
                                 <p>User is currently <b class="text-success">active</b></p>
                                 <input type="hidden" asp-for="Id">
                                 <input type="submit" value="Lock User" class="btn btn-danger btn-lg">
+                                <a asp-area="Admin" asp-controller="Users" asp-action="Index" class="btn btn-secondary btn-lg">Cancel</a>
                             }
                         }
                     </dd>

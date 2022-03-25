@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace QA_Application.Models
 {
-    interface IDbInitializer
+    public interface IDbInitializer
     {
         public void initialize();
     }

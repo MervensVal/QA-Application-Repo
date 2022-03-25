@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace QA_Application.Models
 {
+
     public class DbInitializer : IDbInitializer
     {
         private readonly ApplicationDbContext _Db;
@@ -21,9 +22,18 @@ namespace QA_Application.Models
         public void initialize()
         {
             //Create roles (similar code in register page)
-            _roleManager.CreateAsync(new IdentityRole(Constants.RoleAdmin));
-            _roleManager.CreateAsync(new IdentityRole(Constants.RoleEmplyee));
-            _roleManager.CreateAsync(new IdentityRole(Constants.RoleGeneralUser));
+            if ( _roleManager.FindByNameAsync(Constants.RoleAdmin).GetAwaiter().GetResult() == null)
+            {
+                _roleManager.CreateAsync(new IdentityRole(Constants.RoleAdmin)).GetAwaiter().GetResult();
+            }
+            if (_roleManager.FindByNameAsync(Constants.RoleEmplyee).GetAwaiter().GetResult() == null)
+            {
+                _roleManager.CreateAsync(new IdentityRole(Constants.RoleEmplyee)).GetAwaiter().GetResult();
+            }
+            if (_roleManager.FindByNameAsync(Constants.RoleGeneralUser).GetAwaiter().GetResult() == null)
+            {
+                _roleManager.CreateAsync(new IdentityRole(Constants.RoleGeneralUser)).GetAwaiter().GetResult();
+            }
 
             //Create admin user. Initialize properties and password
             _userManager.CreateAsync(new ApplicationUser
