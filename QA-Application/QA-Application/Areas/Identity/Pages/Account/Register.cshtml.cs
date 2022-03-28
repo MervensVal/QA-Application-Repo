@@ -51,7 +51,7 @@ namespace QA_Application.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-            [Display(Name = "Full Name (Not working)")]
+            [Display(Name = "Full Name")]
             public string Name { get; set; }
 
             [Required]

@@ -36,22 +36,16 @@
     @*@Html.DisplayFor(modelItem => item.prop) and @item.prop is the same thing*@
     @foreach (var item in Model)
 {
-    <div class="card bg-light mb-2 border-" style="border-width: 20px; border-color: lightblue">
-        <div style="background-color: lightblue;">
+    <div class="card bg-light mb-4" style="border-width: 2px; border-top-width: 15px; border-color: lightslategrey;">
+        <div>
             <b>UserName: @Html.DisplayFor(modelItem => item.UserName)</b>
-        </div>
-        <div class="mb-2" style="background-color: lightblue;">
+            <hr />
             Date Posted: @item.Date
-        </div>
-        <div class="m-2">
+            <hr />
             Category: @item.CategoryName
             <hr />
-        </div>
-        <div class="m-2">
             Urgency Level: @item.UrgencyLevel
             <hr />
-        </div>
-        <div class="m-2">
             Title: @item.Title
             <hr />
         </div>
