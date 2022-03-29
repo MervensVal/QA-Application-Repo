@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h3>Add Category</h3>
+<h3>Create a category</h3>
 
 <form asp-action="AddCategory">
     <br/>
@@ -22,6 +22,6 @@
     </table>
     <br/>
     <input type="hidden" asp-for="Archive" value="No">
-    <input class="btn btn-success" type="submit" value="submit">
-    <a class="btn btn-secondary" asp-area="Admin" asp-controller="Category" asp-action="Index">Back to List</a>
+    <input class="btn btn-primary btn-sm" type="submit" value="submit">
+    <a class="btn btn-secondary btn-sm" asp-area="Admin" asp-controller="Category" asp-action="Index">Back to List</a>
 </form>

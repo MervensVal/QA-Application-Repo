@@ -6,12 +6,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h3>Index</h3>
+<h3>Categories</h3>
 
-<a class="btn btn-primary" asp-action="AddCategory">Add Category</a>
-<a class="btn btn-primary" asp-action="ArchiveList">View Archives</a>
-<table class="table">
-    <thead>
+<a class="btn btn-primary btn-sm" asp-action="AddCategory">Add Category</a>
+<a class="btn btn-secondary btn-sm" asp-action="ArchiveList">View Archives</a>
+
+<table class="m-2 table table-striped table-bordered table-hover" >
+    <thead class="thead-dark">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.CategoryName)

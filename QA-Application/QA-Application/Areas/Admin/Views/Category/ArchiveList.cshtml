@@ -8,11 +8,10 @@
 
 <h3>Archived Categories</h3>
 
-<p>
-    <a class="btn btn-secondary"  asp-action="Index">Back to List</a>
-</p>
-<table class="table">
-    <thead>
+ <a class="btn btn-secondary btn-sm"  asp-action="Index">Back to List</a>
+
+<table class="m-2 table table-striped table-bordered table-hover">
+    <thead class="thead-dark">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.CategoryName)
@@ -28,7 +27,7 @@
                     @Html.DisplayFor(modelItem => item.CategoryName)
                 </td>
                 <td>
-                    <a class="btn btn-primary" asp-action="Archive" asp-route-id="@item.CategoryId">Remove Archive</a>
+                    <a class="btn btn-primary btn-sm" asp-action="Archive" asp-route-id="@item.CategoryId">Remove Archive</a>
                 </td>
             </tr>
         }

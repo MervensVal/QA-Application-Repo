@@ -5,42 +5,37 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h3>Archive</h3>
+<h3>Archive a category</h3>
 
 <form asp-action="Archive">
-    <table>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(c => c.CategoryName)
-            </td>
-            <td>
-                @Html.DisplayFor(c => c.CategoryName)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Archive?
-            </td>
-            <td>
-                Yes: @Html.RadioButtonFor(c => c.Archive, "Yes")
-                No:  @Html.RadioButtonFor(c => c.Archive, "No")
+    @Html.DisplayNameFor(c => c.CategoryName): <span class="text-info text-capitalize"><b>@Html.DisplayFor(c => c.CategoryName) </b></span>
+    <br>
 
-                @*Yes:@Html.RadioButton("Archive", "Yes")
-                    No: @Html.RadioButton("Archive", "No")*@
+    Archive this category?
+    <br>
+    <small>*Select "No" to remove category from archive</small>
+    <br>
+    <br>
 
-                @*Yes: <input type="radio" id="archiveYes" name="archiveYes" value="Yes" asp-for="Archive">
-                    No: <input type="radio" id="archiveNo" name="archiveNo" value="No" asp-for="Archive">*@
+    Yes: @Html.RadioButtonFor(c => c.Archive, "Yes")
+    <br>
+    No:  @Html.RadioButtonFor(c => c.Archive, "No")
+    <br>
 
-                @*<select name="Archive" asp-for="Archive">
-                        <option value="No">No</option>
-                        <option value="Yes">Yes</option>
-                    </select>*@
-            </td>
-        </tr>
-    </table>
+    @*Yes:@Html.RadioButton("Archive", "Yes")
+        No: @Html.RadioButton("Archive", "No")*@
+
+    @*Yes: <input type="radio" id="archiveYes" name="archiveYes" value="Yes" asp-for="Archive">
+        No: <input type="radio" id="archiveNo" name="archiveNo" value="No" asp-for="Archive">*@
+
+    @*<select name="Archive" asp-for="Archive">
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select>*@
+
     <input type="hidden" asp-for="CategoryName">
     <input type="hidden" asp-for="CategoryId">
-    <br/>
-    <input class="btn btn-warning" type="submit" value="submit">
-    <a class="btn btn-primary" asp-area="Admin" asp-controller="Category" asp-action="Index">Back to List</a>
+    <br />
+    <input class="btn btn-warning btn-sm" type="submit" value="submit">
+    <a class="btn btn-primary btn-sm" asp-area="Admin" asp-controller="Category" asp-action="Index">Back to List</a>
 </form>
