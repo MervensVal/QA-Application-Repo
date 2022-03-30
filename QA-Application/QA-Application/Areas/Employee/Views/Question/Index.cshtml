@@ -52,10 +52,10 @@
         <div class="m-2 card-body">
             Description:
             <br />
-            <textarea readonly rows="30" cols="120" class="col-12"> @item.QuestionBody</textarea>
+            <textarea readonly rows="20" cols="120" class="col-12"> @item.QuestionBody</textarea>
         </div>
-        <div class="card-footer" style="border-color:lightslategrey"> 
-            | <a class="btn btn-outline-info" asp-action="AddAnswer" asp-route-id="@item.QA_Id">Add Answer</a>
+        <div class="card-footer" style="border-color:lightslategrey">
+            <a class="btn btn-outline-info" asp-action="AddAnswer" asp-route-id="@item.QA_Id">Add Answer</a>
             | <a class="btn btn-outline-info" asp-action="ViewAnswers" asp-route-id="@item.QA_Id">View Answers</a>
             | <a class="btn btn-outline-info" asp-action="Edit" asp-route-id="@item.QA_Id">Edit</a>
             | <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.QA_Id">Delete</a>

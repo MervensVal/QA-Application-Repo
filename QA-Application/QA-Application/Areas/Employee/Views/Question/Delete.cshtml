@@ -15,7 +15,7 @@
 </form>
 <div>
     <hr />
-    <dl class="row text-black-50">
+    <dl class="row text-black">
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.UserName)
         </dt>
@@ -46,7 +46,6 @@
         <dd class="col-sm-10">
             @*@Html.DisplayFor(model => model.QuestionBody)*@
             <textarea readonly rows="30" cols="120" class="col-12" asp-for="@Model.QuestionBody">
-    
             </textarea>
         </dd>
     </dl>

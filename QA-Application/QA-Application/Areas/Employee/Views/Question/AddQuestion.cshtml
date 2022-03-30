@@ -16,7 +16,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group">
             <label class="control-label">Category</label>
-            <select name="CategoryId" asp-items="@(new SelectList(Model.Categories,"CategoryId","CategoryName"))"></select>
+            <select name="CategoryId" class="form-control" asp-items="@(new SelectList(Model.Categories,"CategoryId","CategoryName"))"></select>
             <span asp-validation-for="Question.CategoryId" class="text-danger"></span>
         </div>
             <div class="form-group">
@@ -42,12 +42,9 @@
             </div>
             <div class="form-group">
                 <input type="submit" value="submit" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
