@@ -661,3 +661,4 @@ C:\Users\valme\Source\Repos\MervensVal\QA-Application-Repo\QA-Application\QA-App
 C:\Users\valme\Source\Repos\MervensVal\QA-Application-Repo\QA-Application\QA-Application\bin\Debug\net5.0\System.IO.Pipelines.dll
 C:\Users\valme\source\repos\MervensVal\QA-Application-Repo\QA-Application\QA-Application\obj\Debug\net5.0\Razor\Areas\Admin\Views\Users\Index.cshtml.g.cs
 C:\Users\valme\source\repos\MervensVal\QA-Application-Repo\QA-Application\QA-Application\obj\Debug\net5.0\Razor\Areas\Admin\Views\Users\LockandUnlock.cshtml.g.cs
+C:\Users\valme\source\repos\MervensVal\QA-Application-Repo\QA-Application\QA-Application\obj\Debug\net5.0\Razor\Areas\Employee\Views\Question\MyQuestions.cshtml.g.cs

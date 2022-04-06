@@ -28,7 +28,7 @@ namespace QA_Application.Areas.Employee
         {
             if (UrgencyLevel != 0) 
             {
-                return View(_questionRepo.ViewAllQuestions().Where(q => q.UrgencyLevel == UrgencyLevel));
+                return View(_questionRepo.ViewAllQuestions().Where(q => q.UrgencyLevel == UrgencyLevel).OrderBy(q => q.Date));
             }
             return View(_questionRepo.ViewAllQuestions());
         }
@@ -41,6 +41,11 @@ namespace QA_Application.Areas.Employee
             return View(addQuestionVM);
         }
 
+        public IActionResult MyQuestions()
+        {
+            return View(_questionRepo.MyQuestions(User.Identity.Name));
+        }
+   
         [HttpPost]
         public IActionResult AddQuestion(Question q)
         {
