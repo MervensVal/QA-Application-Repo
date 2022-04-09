@@ -76,7 +76,6 @@ namespace QA_Application.Models
                     Date = ques.Date
                 }
                 );
-            ApplicationUser user = getUserbyId(id);
             var myresults = result.Where(q => q.UserName == id);
             return myresults.ToList();
         }
@@ -84,6 +83,27 @@ namespace QA_Application.Models
         {
             var user = _db.ApplicationUser.FirstOrDefault(u => u.Id == id);
             return user;
+        }
+        
+        public IEnumerable<ViewQuestionVM> SearchByUserName(string username)
+        {
+            var result = _db.Category.Join(
+                _db.Question,
+                cat => cat.CategoryId,
+                ques => ques.CategoryId,
+                (cat, ques) => new ViewQuestionVM
+                {
+                    QA_Id = ques.QA_Id,
+                    UserName = ques.UserName,
+                    CategoryName = cat.CategoryName,
+                    UrgencyLevel = ques.UrgencyLevel,
+                    Title = ques.Title,
+                    QuestionBody = ques.QuestionBody,
+                    Date = ques.Date
+                }
+                );
+            var myresults = result.Where(q => q.UserName == username);
+            return myresults.ToList();
         }
     }
 }

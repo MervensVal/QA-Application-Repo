@@ -14,6 +14,7 @@ namespace QA_Application.Models
         public Question FindQuestionById(int id);
         public void Remove(Question q);
         public IEnumerable<ViewQuestionVM> MyQuestions(string id);
+        public IEnumerable<ViewQuestionVM> SearchByUserName(string username);
     }
 }
 

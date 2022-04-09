@@ -1,0 +1,63 @@
+﻿@model IEnumerable<QA_Application.ViewModels.ViewQuestionVM>
+
+@{
+    ViewData["Title"] = "SearchByUserName";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Search by userName</h3>
+
+<p>
+    <a class="btn btn-outline-info mb-2 mt-2" asp-action="AddQuestion">Add Question</a>
+    <a class="btn btn-outline-info mb-2 mt-2" asp-action="SearchByUserName" name="">My Questions</a>
+</p>
+
+<form asp-action="SearchByUserName" class="col-5">
+    @*<input type="search" id="qsearch" name="qsearch" placeholder="Search Question" class="form-control">*@
+    <label>Search By Username/Email:</label>
+    <input type="text" class="form-control" placeholder="Seach by username" name="username">
+    <br>
+    <input type="submit" value="Search" class="btn btn-info">
+    <a class="btn btn-secondary" asp-action="Index">Back to List</a>
+</form>
+<br />
+
+@if (Model != null)
+{
+
+    @if (Model.Count() == 0)
+    {
+        <h3 class="text-center text-secondary">No Questions to Display</h3>
+    }
+
+@*@Html.DisplayFor(modelItem => item.prop) and @item.prop is the same thing*@
+    @foreach (var item in Model)
+    {
+        <div class="card bg-light mb-4" style="border-width: 2px; border-top-width: 50px; border-color: #263238; ">
+            <div>
+                <b>UserName: @Html.DisplayFor(modelItem => item.UserName)</b>
+                <hr />
+                Date Posted: @item.Date
+                <hr />
+                Category: @item.CategoryName
+                <hr />
+                Urgency Level: @item.UrgencyLevel
+                <hr />
+                Title: @item.Title
+                <hr />
+            </div>
+            <div class="m-2 card-body">
+                Description:
+                <br />
+                <textarea readonly rows="20" cols="120" class="col-12"> @item.QuestionBody</textarea>
+            </div>
+            <div class="card-footer" style="border-color:lightslategrey">
+                <a class="btn btn-outline-info" asp-action="AddAnswer" asp-route-id="@item.QA_Id">Add Answer</a>
+                | <a class="btn btn-outline-info" asp-action="ViewAnswers" asp-route-id="@item.QA_Id">View Answers</a>
+                | <a class="btn btn-outline-info" asp-action="Edit" asp-route-id="@item.QA_Id">Edit</a>
+                | <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.QA_Id">Delete</a>
+            </div>
+        </div>
+        <br />
+    }
+}

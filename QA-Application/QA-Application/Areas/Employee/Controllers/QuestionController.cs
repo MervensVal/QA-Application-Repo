@@ -45,7 +45,18 @@ namespace QA_Application.Areas.Employee
         {
             return View(_questionRepo.MyQuestions(User.Identity.Name));
         }
-   
+
+        public IActionResult SearchByUserName()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult SearchByUserName(string username)
+        {
+            return View(_questionRepo.SearchByUserName(username));
+        }
+
         [HttpPost]
         public IActionResult AddQuestion(Question q)
         {

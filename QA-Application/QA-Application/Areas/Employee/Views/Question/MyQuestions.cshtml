@@ -7,6 +7,11 @@
 
 <h3>My Questions</h3>
 
+<p>
+    <a class="btn btn-outline-info mb-2 mt-2" asp-action="AddQuestion">Add Question</a>
+    <a class="btn btn-outline-info mb-2 mt-2" asp-action="MyQuestions">My Questions</a>
+</p>
+
 @if (Model.Count() == 0)
 {
     <h3 class="text-center text-secondary">No Questions to Display</h3>
@@ -15,7 +20,7 @@
 @*@Html.DisplayFor(modelItem => item.prop) and @item.prop is the same thing*@
 @foreach (var item in Model)
 {
-    <div class="card bg-light mb-4" style="border-width: 2px; border-top-width: 15px; border-color: lightslategrey;">
+    <div class="card bg-light mb-4" style="border-width: 2px; border-top-width: 50px; border-color: #263238; ">
         <div>
             <b>UserName: @Html.DisplayFor(modelItem => item.UserName)</b>
             <hr />
