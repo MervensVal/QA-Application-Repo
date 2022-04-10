@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using QA_Application.Models;
+using QA_Application.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +10,7 @@ using System.Threading.Tasks;
 namespace QA_Application.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = Constants.RoleAdmin)]
     public class UsersController : Controller
     {
         private readonly IUsersRepository _userRepo;

@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using QA_Application.Models;
+using QA_Application.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace QA_Application.Areas.Admin.Controllers
-{
+{  
     [Area("admin")]
+    [Authorize(Roles = Constants.RoleAdmin)]
     public class CategoryController : Controller
     {
         readonly ICategoryRepository _categoryRepo;

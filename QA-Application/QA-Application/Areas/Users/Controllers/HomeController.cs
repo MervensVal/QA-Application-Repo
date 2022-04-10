@@ -8,14 +8,15 @@ using System.Threading.Tasks;
 namespace QA_Application.Areas.Users.Controllers
 {
     [Area("users")]
+    [AllowAnonymous]
     public class HomeController : Controller
     {
-        [Authorize]
         public IActionResult Index()
         {
             return View();
         }
 
+        [AllowAnonymous]
         public IActionResult Privacy()
         {
             return View();

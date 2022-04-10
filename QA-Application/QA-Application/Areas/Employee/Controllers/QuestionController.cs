@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using QA_Application.Data;
 using QA_Application.Models;
 using QA_Application.ViewModels;
 using System;
@@ -7,9 +9,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+
 namespace QA_Application.Areas.Employee
 {
     [Area("employee")]
+    [Authorize]
     public class QuestionController : Controller
     {
         public static Question QuestionConst = null;
