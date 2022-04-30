@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using QA_Application.Data
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -24,15 +25,18 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="Users" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Category" asp-action="Index">Manage Categories</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Employee" asp-controller="Question" asp-action="Index">Manage Questions</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Users" asp-action="Index">Manage Users</a>
-                        </li>
+                        @if (User.IsInRole(Constants.RoleAdmin))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Users" asp-action="Index">Manage Users</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Category" asp-action="Index">Manage Categories</a>
+                            </li>
+                        }
+                            <li class="nav-item">
+                                <a class="nav-link text-white btn btn-sm btn-primary"  asp-area="Employee" asp-controller="Question" asp-action="Index">Get Started</a>
+                            </li>
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

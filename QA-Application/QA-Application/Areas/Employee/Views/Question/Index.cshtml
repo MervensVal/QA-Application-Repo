@@ -1,9 +1,10 @@
-﻿@model IEnumerable<QA_Application.ViewModels.ViewQuestionVM>
+﻿@using QA_Application.Data 
+@model IEnumerable<QA_Application.ViewModels.ViewQuestionVM>
     @*<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />*@
 
     @{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+        ViewData["Title"] = "Index";
+        Layout = "~/Views/Shared/_Layout.cshtml";
     }
 
     <h3>List of Questions</h3>
@@ -58,9 +59,16 @@
         </div>
         <div class="card-footer" style="border-color:lightslategrey">
             <a class="btn btn-outline-info" asp-action="AddAnswer" asp-route-id="@item.QA_Id">Add Answer</a>
-            | <a class="btn btn-outline-info" asp-action="ViewAnswers" asp-route-id="@item.QA_Id">View Answers</a>
-            | <a class="btn btn-outline-info" asp-action="Edit" asp-route-id="@item.QA_Id">Edit</a>
-            | <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.QA_Id">Delete</a>
+             <a class="btn btn-outline-info" asp-action="ViewAnswers" asp-route-id="@item.QA_Id">View Answers</a>
+
+             @if (User.Identity.Name == item.UserName)
+            {
+                <a class="btn btn-outline-info" asp-action="Edit" asp-route-id="@item.QA_Id">Edit</a>
+            }
+             @if (User.Identity.Name == item.UserName || User.IsInRole(Constants.RoleAdmin))
+            {
+                <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.QA_Id">Delete</a>
+            }
         </div>
     </div>
     <br />
